@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> 
+    <title>Plasma Donor App</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Plasma Donor App</a>
+   <div class="justify-content-end" id="navbarSupportContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-light me-2" href="/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-danger me-2" href="/signup">Sign Up</a>
+        </li>
+        </ul>
+   </div>
+  </div>
+</nav>
+<form class="d-flex justify-content-center p-lg-5" action="{{ url_for('register') }}"method="post">
+    <div class="card" style="width: 30rem; padding: 40px 20px;border: hidden; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+        <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+        <div class="mb-3">
+            <input type="number" name="phone" class="form-control" placeholder="Your Mobile Number" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="city" class="form-control" placeholder="Your City Name" required>
+        </div>
+        <div class="mb-3">
+            <select class="form-select" name="infect" required>
+                <option selected>Select COVID infection status</option>
+                <option value="infect">Infected</option>
+                <option value="uninfected">Uninfected</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select class="form-select"  name="blood" required>
+                <option selected>Choose your blood group</option>
+                <option value="O Positive">O Positive</option>
+                <option value="A Positive">A Positive</option>
+                <option value="B Positive">B Positive</option>
+                <option value="AB Positive">AB Positive</option>
+                <option value="O Negative">O Negative</option>
+                <option value="A Negative">A Negative</option>
+                <option value="B Negative">B Negative</option>
+                <option value="AB Negative">AB Negative</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input type="password" name="passw" class="form-control" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Sign Up</button> 
+    </div> 
+</form>
+
+<br><br>
+<div class="text-danger fs-5 justify-content-center text-center">{{ pred }}</div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+</body>
+</html>
